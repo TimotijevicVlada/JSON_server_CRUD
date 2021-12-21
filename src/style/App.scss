@@ -7,4 +7,32 @@
 
 .App {
     text-align: center;
+    .posts {
+        padding: 0px 50px;
+        .post {
+            background-color: rgb(122, 201, 197);
+            margin: 10px 0px;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            &:hover {
+                transform: scale(1.03);
+            }
+            .index {
+                width: 10%;
+               
+            }
+            .title {
+                width: 45%;
+                
+            }
+            .author {
+                width: 45%;
+                
+            }
+        }
+    }
 }

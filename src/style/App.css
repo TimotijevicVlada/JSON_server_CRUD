@@ -9,4 +9,39 @@
 .App {
   text-align: center;
 }
+
+.App .posts {
+  padding: 0px 50px;
+}
+
+.App .posts .post {
+  background-color: #7ac9c5;
+  margin: 10px 0px;
+  padding: 20px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.App .posts .post:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.App .posts .post .index {
+  width: 10%;
+}
+
+.App .posts .post .title {
+  width: 45%;
+}
+
+.App .posts .post .author {
+  width: 45%;
+}
 /*# sourceMappingURL=App.css.map */
