@@ -2,6 +2,7 @@ import React from 'react';
 import './style/App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Posts from './components/Posts';
+import Navbar from './components/Navbar';
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-      <h1>JSON server CRUD operations</h1>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Posts />}/>
       </Routes>

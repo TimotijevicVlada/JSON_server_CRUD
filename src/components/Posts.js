@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import { CrudContext } from '../context/Context';
+import Create from './Create';
 
 const Posts = () => {
 
-    const {data} = useContext(CrudContext);
-   
+    const {data, createVisible} = useContext(CrudContext);
 
     return (
         <div className='posts'>
@@ -15,6 +15,7 @@ const Posts = () => {
                     <span className='author'>{item.author}</span>
                 </div>
             ))}
+            {createVisible &&  <Create />}
         </div>
     )
 }
