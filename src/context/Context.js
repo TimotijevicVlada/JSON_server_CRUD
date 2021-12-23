@@ -4,10 +4,9 @@ import axios from "axios";
 export const CrudContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-  
+
   const [data, setData] = useState([]);
   const [createVisible, setCreateVisible] = useState(false);
-  const [createValues, setCreateValues] = useState({});
 
   //Function that get the data from database
   const getData = async () => {
@@ -20,22 +19,14 @@ export const ContextProvider = ({ children }) => {
     getData();
   }, []);
 
-  //Handle add new post
-  const handleAdd = async () => {
-    await axios.post("http://localhost:3006/posts", createValues);
-    getData();
-  };
 
   return (
     <CrudContext.Provider
       value={{
         data,
         getData,
-        handleAdd,
         createVisible,
-        setCreateVisible,
-        createValues,
-        setCreateValues,
+        setCreateVisible
       }}
     >
       {children}

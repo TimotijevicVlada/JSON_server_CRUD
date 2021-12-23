@@ -92,6 +92,11 @@
                             outline: none;
                         }
                     }
+                    .error {
+                        color: red;
+                        font-size: 12px;
+                        text-align: left;
+                    }
                     button {
                         width: 100%;
                         border: none;
@@ -103,6 +108,10 @@
                         &:hover {
                             background-color: rgb(226, 226, 226);
                         }
+                    }
+                    .success_message {
+                        color: green;
+                        
                     }
                 }
             }

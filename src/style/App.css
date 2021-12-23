@@ -139,6 +139,12 @@
   outline: none;
 }
 
+.App .posts .create_wrapper form .create_inputs .error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
 .App .posts .create_wrapper form .create_inputs button {
   width: 100%;
   border: none;
@@ -151,5 +157,9 @@
 
 .App .posts .create_wrapper form .create_inputs button:hover {
   background-color: #e2e2e2;
+}
+
+.App .posts .create_wrapper form .create_inputs .success_message {
+  color: green;
 }
 /*# sourceMappingURL=App.css.map */
