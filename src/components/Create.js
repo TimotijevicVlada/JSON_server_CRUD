@@ -4,9 +4,8 @@ import { useFormik } from "formik";
 import axios from "axios";
 
 const Create = () => {
-
   const [successMessage, setSuccessMesage] = useState(false);
-  const { setCreateVisible, getData} = useContext(CrudContext);
+  const { setCreateVisible, getData } = useContext(CrudContext);
   const formRef = useRef();
 
   //Function that exit the form when we click out of the form
@@ -16,34 +15,38 @@ const Create = () => {
     }
   };
 
-   //Custom form validation
-    const validate = (values) => {
+  //Custom form validation
+  const validate = (values) => {
     const errors = {};
     if (!values.title) {
       errors.title = "Title is required!";
-    } 
-    if(!values.author) {
-        errors.author = "Author is required!";
+    }
+    if (!values.author) {
+      errors.author = "Author is required!";
     }
     return errors;
   };
 
-    //Formik library
+  //Formik library
   const formik = useFormik({
     initialValues: {
       title: "",
-      author: ""
+      author: "",
     },
     validate,
     onSubmit: async (values) => {
-        const newPost = {
-            title: values.title,
-            author: values.author
-        }
+      const newPost = {
+        title: values.title,
+        author: values.author,
+      };
+      try {
         await axios.post("http://localhost:3006/posts", newPost);
         getData();
         setSuccessMesage(true);
-    }
+      } catch (error) {
+        console.log(error);
+      }
+    },
   });
 
   return (
@@ -74,7 +77,9 @@ const Create = () => {
             <div className="error">{formik.errors.author}</div>
           )}
           <button type="submit">Create</button>
-          {successMessage && <div className="success_message">Post has been created!</div>}
+          {successMessage && (
+            <div className="success_message">Post has been created!</div>
+          )}
         </div>
       </form>
     </div>

@@ -50,8 +50,8 @@
 }
 
 .App .posts .post:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 .App .posts .post .index {
@@ -64,6 +64,19 @@
 
 .App .posts .post .author {
   width: 45%;
+}
+
+.App .posts .post .delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.App .posts .post .delete:hover {
+  cursor: pointer;
+  background-color: #cf0303;
 }
 
 .App .posts .create_wrapper {

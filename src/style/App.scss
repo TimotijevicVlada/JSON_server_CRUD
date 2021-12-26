@@ -35,19 +35,27 @@
             transition: all 0.4s ease;
             color: white;
             &:hover {
-                transform: scale(1.03);
+                transform: scale(1.01);
             }
             .index {
                 width: 10%;
-               
             }
             .title {
                 width: 45%;
-                
             }
             .author {
                 width: 45%;
-                
+            }
+            .delete {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 5px;
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb(207, 3, 3);
+                }
             }
         }
         .create_wrapper {
