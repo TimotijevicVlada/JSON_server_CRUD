@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { CrudContext } from "../context/Context";
 import Create from "./Create";
+import Update from "./Update";
 import axios from "axios";
 
 const Posts = () => {
-  const { data, createVisible, getData } = useContext(CrudContext);
+  const { data, createVisible, getData, updateVisible, setUpdateVisible, setItemToUpdate } =
+    useContext(CrudContext);
 
   const handleDelete = async (item) => {
     try {
@@ -15,6 +17,11 @@ const Posts = () => {
     }
   };
 
+  const handleUpdate = (item) => {
+    setUpdateVisible(true);
+    setItemToUpdate(item);
+  }
+
   return (
     <div className="posts">
       {data.posts?.map((item, index) => (
@@ -22,12 +29,16 @@ const Posts = () => {
           <span className="index">#{index + 1}</span>
           <span className="title">{item.title}</span>
           <span className="author">{item.author}</span>
-          <button onClick={() => handleDelete(item)} className="delete">
-            Delete
-          </button>
+          <div className="events">
+            <button onClick={() => handleUpdate(item)} className="update">Update</button>
+            <button onClick={() => handleDelete(item)} className="delete">
+              Delete
+            </button>
+          </div>
         </div>
       ))}
       {createVisible && <Create />}
+      {updateVisible && <Update />}
     </div>
   );
 };

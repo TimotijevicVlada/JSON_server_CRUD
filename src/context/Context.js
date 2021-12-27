@@ -7,6 +7,8 @@ export const ContextProvider = ({ children }) => {
 
   const [data, setData] = useState([]);
   const [createVisible, setCreateVisible] = useState(false);
+  const [updateVisible, setUpdateVisible] = useState(false);
+  const [itemToUpdate, setItemToUpdate] = useState({});
 
   //Function that get the data from database
   const getData = async () => {
@@ -26,7 +28,11 @@ export const ContextProvider = ({ children }) => {
         data,
         getData,
         createVisible,
-        setCreateVisible
+        setCreateVisible, 
+        updateVisible, 
+        setUpdateVisible, 
+        itemToUpdate, 
+        setItemToUpdate
       }}
     >
       {children}

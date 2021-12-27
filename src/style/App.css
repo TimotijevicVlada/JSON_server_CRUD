@@ -3,7 +3,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .App {
@@ -66,7 +66,27 @@
   width: 45%;
 }
 
-.App .posts .post .delete {
+.App .posts .post .events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .posts .post .events .update {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.App .posts .post .events .update:hover {
+  cursor: pointer;
+  background-color: #c48208;
+}
+
+.App .posts .post .events .delete {
   background-color: red;
   color: white;
   border: none;
@@ -74,7 +94,7 @@
   border-radius: 5px;
 }
 
-.App .posts .post .delete:hover {
+.App .posts .post .events .delete:hover {
   cursor: pointer;
   background-color: #cf0303;
 }
@@ -173,6 +193,103 @@
 }
 
 .App .posts .create_wrapper form .create_inputs .success_message {
+  color: green;
+}
+
+.App .posts .update_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .posts .update_wrapper form {
+  background-color: lightgray;
+  width: 350px;
+  min-height: 400px;
+  border-radius: 15px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-animation: fadeInUpdate 0.4s linear;
+          animation: fadeInUpdate 0.4s linear;
+}
+
+@-webkit-keyframes fadeInUpdate {
+  0% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUpdate {
+  0% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+.App .posts .update_wrapper form .update_title {
+  font-size: 20px;
+}
+
+.App .posts .update_wrapper form .update_inputs input {
+  width: 100%;
+  border: none;
+  margin: 5px 0px;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 17px;
+}
+
+.App .posts .update_wrapper form .update_inputs input:focus {
+  outline: none;
+}
+
+.App .posts .update_wrapper form .update_inputs .error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
+.App .posts .update_wrapper form .update_inputs button {
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.App .posts .update_wrapper form .update_inputs button:hover {
+  background-color: #e2e2e2;
+}
+
+.App .posts .update_wrapper form .update_inputs .success_message {
   color: green;
 }
 /*# sourceMappingURL=App.css.map */

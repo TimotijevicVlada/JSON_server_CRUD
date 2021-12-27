@@ -43,6 +43,9 @@ const Create = () => {
         await axios.post("http://localhost:3006/posts", newPost);
         getData();
         setSuccessMesage(true);
+        setTimeout(() => {
+          setCreateVisible(false);
+        }, 2000)
       } catch (error) {
         console.log(error);
       }
