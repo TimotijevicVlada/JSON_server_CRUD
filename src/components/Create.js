@@ -37,7 +37,7 @@ const Create = () => {
     onSubmit: async (values) => {
       const newPost = {
         title: values.title,
-        author: values.author,
+        author: values.author
       };
       try {
         await axios.post("http://localhost:3006/posts", newPost);
